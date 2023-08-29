@@ -8,14 +8,16 @@ const UserCard = ({ name, handle, html_url, joinDate }) => {
       <img className="user-avatar" src="/avatar.svg" alt="User avatar" />
       <div className="user-details">
         <h2 className="user-name">{name === null ? "Not Available" : name}</h2>
-        <a
-          className="user-handle"
-          href={formatUrl(html_url)}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          @{handle}
-        </a>
+        <h3>
+          <a
+            className="user-handle"
+            href={formatUrl(html_url)}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            @{handle}
+          </a>
+        </h3>
         <time className="joined-date" dateTime={joinDate}>
           Joined {new Date(joinDate).toLocaleDateString()}
         </time>
