@@ -81,6 +81,7 @@
 .user-handle {
   margin-bottom: 6px;
   color: #0079ff;
+  display: block;
 }
 
 .user-bio {
@@ -116,6 +117,7 @@
 .contact-item {
   display: flex;
   gap: 13px;
+  align-items: center;
 }
 
 .contact-item:first-child {
@@ -125,4 +127,10 @@
 .contact-info {
   color: #fff;
   text-decoration: none;
+}
+
+.not-available {
+  color: gray;
+  pointer-events: none;
+  cursor: default;
 }

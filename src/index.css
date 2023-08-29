@@ -38,14 +38,25 @@ body,
   height: 100%;
 }
 
+:root {
+  /* Light Mode Colors: */
+  --color-primary-light: hsl(212deg, 100%, 50%);
+  --color-neutral-light-1: hsl(217deg, 20%, 51%);
+  --color-neutral-light-2: hsl(217deg, 35%, 45%);
+  --color-neutral-light-dark: hsl(217deg, 21%, 21%);
+  --color-accent-light: hsl(227deg, 100%, 98%);
+  --color-white-light: hsl(0deg, 0%, 100%);
+  /* Dark Mode Colors */
+  --color-primary-dark: hsl(212deg, 100%, 50%);
+  --color-white-dark: hsl(0deg, 0%, 100%);
+  --color-neutral-dark-1: hsl(220deg, 40%, 13%);
+  --color-neutral-dark-2: hsl(222deg, 41%, 20%);
+}
+
 body {
   background: #141d2f;
   color: #fff;
 }
 
-/* :root {
-
-}
-
-:root[data-theme="dark"] {
-} */
+/* :root[data-theme="dark"] {
+}  */
