@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const UserStats = ({ repos, followers, following }) => {
   return (
-    <div className="user-stats">
+    <section className="user-stats">
       <div className="stat-item">
         <h3 className="stat-title">Repos</h3>
         <p className="stat-value">{repos}</p>
@@ -15,7 +15,7 @@ const UserStats = ({ repos, followers, following }) => {
         <h3 className="stat-title">Following</h3>
         <p className="stat-value">{following}</p>
       </div>
-    </div>
+    </section>
   );
 };
 
