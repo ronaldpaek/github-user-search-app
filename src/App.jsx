@@ -21,37 +21,38 @@ const App = () => {
     followers: 3938,
     following: 9,
     location: "San Francisco",
-    blog: "github.blog",
+    blog: "https://github.blog",
     twitter_username: null,
     company: "@github",
   });
-  console.log({ user });
 
   return (
-    <div className="github-search-container">
+    <>
       <AppHeader />
-      <main>
+      <div className="github-search-container">
         <SearchBar setUser={setUser} />
-        <UserCard
-          name={user.name}
-          handle={user.login}
-          html_url={user.html_url}
-          joinDate={user.created_at}
-        />
-        <UserBio bio={user.bio} />
-        <UserStats
-          repos={user.public_repos}
-          followers={user.followers}
-          following={user.following}
-        />
-        <UserContactDetails
-          location={user.location}
-          website={user.blog}
-          twitter={user.twitter_username}
-          company={user.company}
-        />
-      </main>
-    </div>
+        <main className="user-content">
+          <UserCard
+            name={user.name}
+            handle={user.login}
+            html_url={user.html_url}
+            joinDate={user.created_at}
+          />
+          <UserBio bio={user.bio} />
+          <UserStats
+            repos={user.public_repos}
+            followers={user.followers}
+            following={user.following}
+          />
+          <UserContactDetails
+            location={user.location}
+            website={user.blog}
+            twitter={user.twitter_username}
+            company={user.company}
+          />
+        </main>
+      </div>
+    </>
   );
 };
 

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -39,24 +41,91 @@ body,
 }
 
 :root {
-  /* Light Mode Colors: */
-  --color-primary-light: hsl(212deg, 100%, 50%);
-  --color-neutral-light-1: hsl(217deg, 20%, 51%);
-  --color-neutral-light-2: hsl(217deg, 35%, 45%);
-  --color-neutral-light-dark: hsl(217deg, 21%, 21%);
-  --color-accent-light: hsl(227deg, 100%, 98%);
-  --color-white-light: hsl(0deg, 0%, 100%);
-  /* Dark Mode Colors */
-  --color-primary-dark: hsl(212deg, 100%, 50%);
-  --color-white-dark: hsl(0deg, 0%, 100%);
-  --color-neutral-dark-1: hsl(220deg, 40%, 13%);
-  --color-neutral-dark-2: hsl(222deg, 41%, 20%);
+  --color-primary: hsl(212deg, 100%, 50%);
+  --color-neutral-1: hsl(217deg, 20%, 51%);
+  --color-neutral-2: hsl(217deg, 35%, 45%);
+  --color-neutral-dark: hsl(217deg, 21%, 21%);
+  --color-accent: hsl(227deg, 100%, 98%);
+  --color-white: hsl(0deg, 0%, 100%);
+
+  --font-family: "Space Mono", monospace;
+
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+
+  --font-size-1: 11px;
+  --font-size-2: 13px;
+  --font-size-3: 15px;
+  --font-size-4: 16px;
+  --font-size-5: 22px;
+  --font-size-6: 26px;
+
+  --line-height-1: 1.66;
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 48px;
+
+  --box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+
+  --border-radius-1: 10px;
+  --border-radius-2: 15px;
 }
 
-body {
-  background: #141d2f;
-  color: #fff;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: hsl(212deg, 100%, 50%);
+    --color-white: hsl(222deg, 41%, 20%);
+    --color-neutral-1: hsl(220deg, 40%, 13%);
+    --color-neutral-2: hsl(0deg, 0%, 100%);
+    --color-accent: hsl(220deg, 40%, 13%);
+    --color-neutral-dark: hsl(0deg, 0%, 100%);
+  }
 }
 
 /* :root[data-theme="dark"] {
-}  */
+  --color-primary: hsl(212deg, 100%, 50%);
+  --color-white: hsl(0deg, 0%, 100%);
+  --color-neutral-1: hsl(220deg, 40%, 13%);
+  --color-neutral-2: hsl(222deg, 41%, 20%);
+  --color-accent: hsl(220deg, 40%, 13%);
+  --color-neutral-dark: hsl(0deg, 0%, 100%);
+} */
+
+body {
+  background: var(--color-accent);
+  color: var(--color-neutral-2);
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-1);
+  font-family: var(--font-family);
+}
+
+h1,
+.h1 {
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-700);
+  color: var(--color-neutral-dark);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-700);
+  color: var(--color-neutral-dark);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-400);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-400);
+}
