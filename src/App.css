@@ -147,6 +147,7 @@ input[type="search"] {
   color: var(--color-primary);
   text-decoration: none;
   display: block;
+  width: fit-content;
   &:hover {
     text-decoration: underline;
   }
@@ -355,7 +356,6 @@ input[type="search"] {
     }
     > h3 {
       order: 1;
-      flex-basis: auto;
     }
   }
 
