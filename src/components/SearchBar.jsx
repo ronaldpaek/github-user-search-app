@@ -66,7 +66,10 @@ const SearchBar = ({ setUser }) => {
           value={searchQuery}
           name="q"
           placeholder="Search GitHub username..."
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setMessage(null);
+          }}
           onKeyDown={handleEnterKey}
         />
       </div>
