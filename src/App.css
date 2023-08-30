@@ -20,6 +20,7 @@
   > a {
     text-decoration: none;
     color: inherit;
+    display: block;
   }
 }
 
@@ -31,6 +32,9 @@
   border: 0;
   background-color: var(--color-background-main);
   color: var(--color-text-main);
+  cursor: pointer;
+  padding: var(--spacing-2);
+  margin-inline: calc(-1 * var(--spacing-2));
   &:hover {
     color: var(--color-toggle-hover);
     transition: color 0.3s ease;
