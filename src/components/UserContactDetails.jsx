@@ -90,11 +90,16 @@ const UserContactDetails = ({ location, website, twitter, company }) => {
   );
 };
 
+const stringOrNull = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.oneOf([null]),
+]);
+
 UserContactDetails.propTypes = {
-  location: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
-  website: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
-  twitter: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
-  company: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
+  location: stringOrNull,
+  website: stringOrNull,
+  twitter: stringOrNull,
+  company: stringOrNull,
 };
 
 export default UserContactDetails;

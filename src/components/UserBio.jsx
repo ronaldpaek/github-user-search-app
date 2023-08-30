@@ -9,7 +9,8 @@ const UserBio = ({ bio }) => {
 };
 
 UserBio.propTypes = {
-  bio: PropTypes.string.isRequired,
+  bio: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])])
+    .isRequired,
 };
 
 export default UserBio;

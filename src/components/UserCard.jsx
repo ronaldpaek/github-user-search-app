@@ -27,7 +27,7 @@ const UserCard = ({ name, handle, html_url, joinDate }) => {
 };
 
 UserCard.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   handle: PropTypes.string.isRequired,
   html_url: PropTypes.string.isRequired,
   joinDate: PropTypes.string.isRequired,
