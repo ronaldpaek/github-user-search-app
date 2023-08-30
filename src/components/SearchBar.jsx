@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const SearchBar = ({ setUser }) => {
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
   const [searchQuery, setSearchQuery] = useState("");
   const [message, setMessage] = useState(null);
   const searchInputRef = useRef(null);
@@ -48,13 +51,14 @@ const SearchBar = ({ setUser }) => {
   };
   return (
     <div className="search-bar">
-      <div className="search-input-container">
-        <img
-          className="search-icon"
-          src="/icon-search.svg"
-          alt="Search icon"
-          onClick={focusInput}
-        />
+      <div className="search-input-container" onClick={focusInput}>
+        {!isIOS && (
+          <img
+            className="search-icon"
+            src="/icon-search.svg"
+            alt="Search icon"
+          />
+        )}
         <input
           className="search-input truncate-text"
           ref={searchInputRef}
