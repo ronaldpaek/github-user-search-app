@@ -12,6 +12,7 @@ import "./App.css";
 
 const App = () => {
   const [user, setUser] = useState({
+    avatar_url: "/avatar.svg",
     name: "The Octocat",
     login: "octocat",
     html_url: "https://github.com/octocat",
@@ -33,9 +34,10 @@ const App = () => {
         <SearchBar setUser={setUser} />
         <main className="user-content">
           <UserCard
+            avatarUrl={user.avatar_url}
             name={user.name}
             handle={user.login}
-            html_url={user.html_url}
+            htmlUrl={user.html_url}
             joinDate={user.created_at}
           />
           <UserBio bio={user.bio} />

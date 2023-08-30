@@ -2,16 +2,17 @@ import PropTypes from "prop-types";
 
 import { formatUrl, formatDate } from "../utils";
 
-const UserCard = ({ name, handle, html_url, joinDate }) => {
+const UserCard = ({ avatarUrl, name, handle, htmlUrl, joinDate }) => {
+  console.log(avatarUrl);
   return (
     <section className="user-card">
-      <img className="user-avatar" src="/avatar.svg" alt="User avatar" />
+      <img className="user-avatar" src={avatarUrl} />
       <div className="user-details">
         <h2 className="user-name">{name === null ? "Not Available" : name}</h2>
         <h3>
           <a
             className="user-handle"
-            href={formatUrl(html_url)}
+            href={formatUrl(htmlUrl)}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -27,9 +28,10 @@ const UserCard = ({ name, handle, html_url, joinDate }) => {
 };
 
 UserCard.propTypes = {
+  avatarUrl: PropTypes.string,
   name: PropTypes.string,
   handle: PropTypes.string.isRequired,
-  html_url: PropTypes.string.isRequired,
+  htmlUrl: PropTypes.string.isRequired,
   joinDate: PropTypes.string.isRequired,
 };
 
