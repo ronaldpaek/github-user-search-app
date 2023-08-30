@@ -101,6 +101,24 @@ body,
   }
 }
 
+[data-theme="light"] {
+  --color-primary: hsl(212deg, 100%, 50%);
+  --color-toast: hsl(0, 91%, 62%);
+  --color-not-available: hsl(219, 28%, 73%);
+
+  --color-text-button: hsl(0deg, 0%, 100%);
+  --color-primary-hover: hsla(212, 100%, 69%, 1);
+
+  --color-background-main: hsl(227deg, 100%, 98%);
+  --color-background-secondary: hsl(0deg, 0%, 100%);
+
+  --color-text-main: hsl(217deg, 35%, 45%);
+  --color-text-heading: hsl(217deg, 21%, 21%);
+  --color-toggle-hover: var(--color-text-heading);
+  --color-text-input: var(--color-text-heading);
+  --color-text-stat: var(--color-text-heading);
+}
+
 [data-theme="dark"] {
   --color-background-main: hsl(220deg, 40%, 13%);
   --color-background-secondary: hsl(222deg, 41%, 20%);
