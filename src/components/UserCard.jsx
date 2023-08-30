@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { formatUrl } from "../utils";
+import { formatUrl, formatDate } from "../utils";
 
 const UserCard = ({ name, handle, html_url, joinDate }) => {
   return (
@@ -19,7 +19,7 @@ const UserCard = ({ name, handle, html_url, joinDate }) => {
           </a>
         </h3>
         <time className="joined-date" dateTime={joinDate}>
-          Joined {new Date(joinDate).toLocaleDateString()}
+          Joined {formatDate(joinDate)}
         </time>
       </div>
     </section>
