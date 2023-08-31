@@ -62,7 +62,7 @@ const SearchBar = ({ setUser }) => {
         <input
           className="search-input truncate-text"
           ref={searchInputRef}
-          type="search"
+          type="text"
           value={searchQuery}
           name="q"
           placeholder="Search GitHub username..."
