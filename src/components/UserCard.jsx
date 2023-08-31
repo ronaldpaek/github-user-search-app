@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { formatUrl, formatDate } from "../utils";
 
 const UserCard = ({ avatarUrl, name, handle, htmlUrl, joinDate }) => {
-  console.log(avatarUrl);
   return (
     <section className="user-card">
       <img className="user-avatar" src={avatarUrl} />

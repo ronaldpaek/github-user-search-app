@@ -50,7 +50,6 @@ const SearchBar = ({ setUser }) => {
           ref={searchInputRef}
           type="text"
           value={searchQuery}
-          name="q"
           placeholder="Search GitHub username..."
           onChange={(e) => {
             setSearchQuery(e.target.value);
