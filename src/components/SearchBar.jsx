@@ -2,9 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const SearchBar = ({ setUser }) => {
-  // const isIOS =
-  //   /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
   const [searchQuery, setSearchQuery] = useState("");
   const [message, setMessage] = useState(null);
   const searchInputRef = useRef(null);
@@ -36,29 +33,18 @@ const SearchBar = ({ setUser }) => {
     }
   };
 
-  const focusInput = () => {
-    searchInputRef.current.focus();
-  };
-
-  const handleSearchClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     fetchUserData(searchQuery);
   };
 
-  const handleEnterKey = (e) => {
-    if (e.key === "Enter") {
-      handleSearchClick();
-    }
-  };
   return (
-    <div className="search-bar">
-      <div className="search-input-container" onClick={focusInput}>
-        {/* {!isIOS && ( */}
-          <img
-            className="search-icon"
-            src="/icon-search.svg"
-            alt="Search icon"
-          />
-        {/* )} */}
+    <form className="search-bar" onSubmit={handleSubmit}>
+      <div
+        className="search-input-container"
+        onClick={() => searchInputRef.current.focus()}
+      >
+        <img className="search-icon" src="/icon-search.svg" alt="Search icon" />
         <input
           className="search-input truncate-text"
           ref={searchInputRef}
@@ -70,14 +56,13 @@ const SearchBar = ({ setUser }) => {
             setSearchQuery(e.target.value);
             setMessage(null);
           }}
-          onKeyDown={handleEnterKey}
         />
       </div>
       {message && <p className="message-toast">{message}</p>}
-      <button className="search-button" onClick={handleSearchClick}>
+      <button className="search-button" type="submit">
         Search
       </button>
-    </div>
+    </form>
   );
 };
 
