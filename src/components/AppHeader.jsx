@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 
 const AppHeader = () => {
-  const initialTheme = localStorage.getItem("theme") || "light";
+  const initialTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
   const [theme, setTheme] = useState(initialTheme);
 
   useEffect(() => {
@@ -28,7 +33,7 @@ const AppHeader = () => {
         aria-label="Toggle Theme"
         onClick={toggleTheme}
       >
-        <p className="theme-label">{theme}</p>
+        <p className="theme-label">{theme === "light" ? "dark" : "light"}</p>
         {theme === "light" ? (
           <svg
             className="theme-icon"

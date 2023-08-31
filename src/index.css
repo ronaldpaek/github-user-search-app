@@ -101,7 +101,17 @@ body,
   }
 }
 
-[data-theme="light"] {
+:root[data-theme="dark"] {
+  --color-background-main: hsl(220deg, 40%, 13%);
+  --color-background-secondary: hsl(222deg, 41%, 20%);
+
+  --color-text-main: hsl(0deg, 0%, 100%);
+  --color-text-heading: hsl(0deg, 0%, 100%);
+
+  --color-toggle-hover: hsl(222, 44%, 70%);
+}
+
+:root[data-theme="light"] {
   --color-primary: hsl(212deg, 100%, 50%);
   --color-toast: hsl(0, 91%, 62%);
   --color-not-available: hsl(219, 28%, 73%);
@@ -119,15 +129,7 @@ body,
   --color-text-stat: var(--color-text-heading);
 }
 
-[data-theme="dark"] {
-  --color-background-main: hsl(220deg, 40%, 13%);
-  --color-background-secondary: hsl(222deg, 41%, 20%);
 
-  --color-text-main: hsl(0deg, 0%, 100%);
-  --color-text-heading: hsl(0deg, 0%, 100%);
-
-  --color-toggle-hover: hsl(222, 44%, 70%);
-}
 
 body {
   background: var(--color-background-main);
