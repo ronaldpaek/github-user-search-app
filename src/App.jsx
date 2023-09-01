@@ -16,10 +16,10 @@ const App = () => {
     name: "The Octocat",
     login: "octocat",
     html_url: "https://github.com/octocat",
-    created_at: "2011-01-25T00:00:00.000Z",
+    created_at: "2011-01-25T18:44:36Z",
     bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.",
     public_repos: 8,
-    followers: 3938,
+    followers: 10288,
     following: 9,
     location: "San Francisco",
     blog: "https://github.blog",
@@ -28,7 +28,7 @@ const App = () => {
   });
 
   return (
-    <>
+    <div className="container">
       <AppHeader />
       <div className="github-search-container">
         <SearchBar setUser={setUser} />
@@ -54,7 +54,7 @@ const App = () => {
           />
         </main>
       </div>
-    </>
+    </div>
   );
 };
 
