@@ -14,4 +14,6 @@ const DEFAULT_USER_DATA = {
   company: "@github",
 };
 
-export { DEFAULT_USER_DATA };
+const API_ENDPOINT = "https://api.github.com/users/";
+
+export { DEFAULT_USER_DATA, API_ENDPOINT };

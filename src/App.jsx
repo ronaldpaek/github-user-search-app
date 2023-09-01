@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { DEFAULT_USER_DATA } from "./constants";
+import { DEFAULT_USER_DATA, API_ENDPOINT } from "./constants";
 import { AppHeader, SearchBar, User } from "./components";
 import "./App.css";
 
@@ -8,7 +8,7 @@ const App = () => {
   const [user, setUser] = useState(DEFAULT_USER_DATA);
 
   const fetchUserData = async (username) => {
-    const apiUrl = `https://api.github.com/users/${username}`;
+    const apiUrl = `${API_ENDPOINT}${username}`;
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
