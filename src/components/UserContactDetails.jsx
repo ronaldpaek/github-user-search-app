@@ -4,6 +4,7 @@ import { formatUrl } from "../utils";
 
 const UserContactDetails = ({ location, website, twitter, company }) => {
   const inActiveColor = "#a5b4cd";
+
   return (
     <section className="user-contact-details">
       <ul className="contact-details-list">
