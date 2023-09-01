@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const SearchBar = ({ setUser }) => {
+const SearchBar = ({ fetchUserData }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [message, setMessage] = useState(null);
   const searchInputRef = useRef(null);
@@ -16,26 +16,14 @@ const SearchBar = ({ setUser }) => {
     }
   }, [searchQuery]);
 
-  const fetchUserData = async (username) => {
-    const apiUrl = `https://api.github.com/users/${username}`;
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      if (response.ok && data && data.login) {
-        setUser(data);
-        setMessage(null);
-        setSearchQuery("");
-      } else {
-        setMessage("No Results");
-      }
-    } catch (error) {
-      setMessage("An error occurred while fetching the GitHub user data");
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchUserData(searchQuery);
+    fetchUserData(searchQuery).then((message) => {
+      setMessage(message);
+      if (message === null) {
+        setSearchQuery("");
+      }
+    });
   };
 
   return (
@@ -66,7 +54,7 @@ const SearchBar = ({ setUser }) => {
 };
 
 SearchBar.propTypes = {
-  setUser: PropTypes.func.isRequired,
+  fetchUserData: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
