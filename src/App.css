@@ -190,6 +190,7 @@ input[type="search"] {
 
 .stat-title {
   margin-bottom: var(--spacing-2);
+  text-transform: capitalize;
 }
 
 .stat-value {
