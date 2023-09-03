@@ -6,7 +6,7 @@ const DEFAULT_USER_DATA = {
   created_at: "2011-01-25T18:44:36Z",
   bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.",
   public_repos: 8,
-  followers: 10288,
+  followers: 3938,
   following: 9,
   location: "San Francisco",
   blog: "https://github.blog",
@@ -16,4 +16,6 @@ const DEFAULT_USER_DATA = {
 
 const API_ENDPOINT = "https://api.github.com/users/";
 
-export { DEFAULT_USER_DATA, API_ENDPOINT };
+const STATS = ["repos", "followers", "following"];
+
+export { DEFAULT_USER_DATA, API_ENDPOINT, STATS };
