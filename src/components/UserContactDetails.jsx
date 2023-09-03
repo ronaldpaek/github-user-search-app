@@ -10,9 +10,7 @@ const UserContactDetails = ({ location, website, twitter, company }) => {
     <section className="user-contact-details">
       <ul className="contact-details-list">
         <li className="contact-item">
-          <div className="svg-container">
-            <Location location={location} inActiveColor={inActiveColor} />
-          </div>
+          <Location location={location} inActiveColor={inActiveColor} />
           <a
             className={`contact-info ${!location && "not-available"}`}
             href={
@@ -29,9 +27,7 @@ const UserContactDetails = ({ location, website, twitter, company }) => {
           </a>
         </li>
         <li className="contact-item">
-          <div className="svg-container">
-            <Website website={website} inActiveColor={inActiveColor} />
-          </div>
+          <Website website={website} inActiveColor={inActiveColor} />
           <a
             className={`contact-info ${!website && "not-available"}`}
             href={website === "" ? "" : formatUrl(website)}
@@ -42,9 +38,7 @@ const UserContactDetails = ({ location, website, twitter, company }) => {
           </a>
         </li>
         <li className="contact-item">
-          <div className="svg-container">
-            <Twitter twitter={twitter} inActiveColor={inActiveColor} />
-          </div>
+          <Twitter twitter={twitter} inActiveColor={inActiveColor} />
           <a
             className={`contact-info ${!twitter && "not-available"}`}
             href={twitter === null ? "" : `https://twitter.com/${twitter}`}
@@ -55,9 +49,7 @@ const UserContactDetails = ({ location, website, twitter, company }) => {
           </a>
         </li>
         <li className="contact-item">
-          <div className="svg-container">
-            <Company company={company} inActiveColor={inActiveColor} />
-          </div>
+          <Company company={company} inActiveColor={inActiveColor} />
           <a
             className={`contact-info ${!company && "not-available"}`}
             href={
