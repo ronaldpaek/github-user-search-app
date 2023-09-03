@@ -19,9 +19,10 @@ const SearchBar = ({ fetchUserData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchUserData(searchQuery).then((message) => {
-      setMessage(message);
       if (message === null) {
         setSearchQuery("");
+      } else if (searchQuery !== "") {
+        setMessage(message);
       }
     });
   };
