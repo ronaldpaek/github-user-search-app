@@ -24,35 +24,38 @@ const GITHUB_URL = "https://github.com/";
 
 const STATS = ["repos", "followers", "following"];
 
+const className = (info) => `contact-info ${!info && "not-available"}`;
+const text = (info) => info || "Not Available";
+
 const CONTACT_DETAILS = [
   {
     Icon: Location,
     key: "location",
-    className: (info) => `contact-info ${!info && "not-available"}`,
+    className,
     href: (info) =>
       info ? `${GOOGLE_API_ENDPOINT}${encodeURIComponent(info)}` : "",
-    text: (info) => info || "Not Available",
+    text,
   },
   {
     Icon: Website,
     key: "website",
-    className: (info) => `contact-info ${!info && "not-available"}`,
+    className,
     href: (info) => (info ? formatUrl(info) : ""),
-    text: (info) => info || "Not Available",
+    text,
   },
   {
     Icon: Twitter,
     key: "twitter",
-    className: (info) => `contact-info ${!info && "not-available"}`,
+    className,
     href: (info) => (info ? `${TWITTER_URL}${info}` : ""),
     text: (info) => (info ? `@${info}` : "Not Available"),
   },
   {
     Icon: Company,
     key: "company",
-    className: (info) => `contact-info ${!info && "not-available"}`,
+    className,
     href: (info) => (info ? `${GITHUB_URL}${info.slice(1)}` : ""),
-    text: (info) => info || "Not Available",
+    text,
   },
 ];
 
