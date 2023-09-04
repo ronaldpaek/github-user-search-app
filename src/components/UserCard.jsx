@@ -5,9 +5,11 @@ import { Link } from "./";
 
 const UserCard = ({ avatarUrl, name, handle, htmlUrl, joinDate }) => (
   <section className="user-card">
-    <img className="user-avatar" src={avatarUrl} />
+    <img className="user-avatar" src={avatarUrl} alt={`${name}'s Avatar`} />
     <div className="user-details">
-      <h2 className="user-name">{name === null ? "Not Available" : name}</h2>
+      <h2 className="user-name" aria-label={`User's Name: ${name}`}>
+        {name === null ? "Not Available" : name}
+      </h2>
       <h3>
         <Link className="user-handle" href={formatUrl(htmlUrl)}>
           @{handle}

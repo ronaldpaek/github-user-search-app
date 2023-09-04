@@ -5,10 +5,21 @@ import { UserContactDetail } from "./";
 
 const UserContactDetails = (props) => (
   <section className="user-contact-details">
-    <ul className="contact-details-list">
+    <ul
+      className="contact-details-list"
+      role="list"
+      aria-label="Contact Details"
+    >
       {CONTACT_DETAILS.map((detail) => {
         const info = props[detail.key];
-        return <UserContactDetail key={detail.key} {...detail} info={info} />;
+        return (
+          <UserContactDetail
+            key={detail.key}
+            {...detail}
+            info={info}
+            ariaLabel={`Contact Detail: ${detail.key}, ${info}`}
+          />
+        );
       })}
     </ul>
   </section>

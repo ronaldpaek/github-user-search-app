@@ -32,11 +32,16 @@ const AppHeader = () => {
       </h1>
       <button
         className="theme-toggle"
-        aria-label="Toggle Theme"
+        aria-label={`Toggle ${theme === "light" ? "dark" : "light"} theme`}
         onClick={toggleTheme}
+        role="button"
       >
         <p className="theme-label">{theme === "light" ? "dark" : "light"}</p>
-        {theme === "light" ? <Moon /> : <Sun />}
+        {theme === "light" ? (
+          <Moon aria-hidden="true" />
+        ) : (
+          <Sun aria-hidden="true" />
+        )}
       </button>
     </header>
   );
