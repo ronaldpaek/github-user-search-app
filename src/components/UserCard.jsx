@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import { formatUrl, formatDate } from "../utils";
+import { Link } from "./";
 
 const UserCard = ({ avatarUrl, name, handle, htmlUrl, joinDate }) => (
   <section className="user-card">
@@ -8,14 +9,9 @@ const UserCard = ({ avatarUrl, name, handle, htmlUrl, joinDate }) => (
     <div className="user-details">
       <h2 className="user-name">{name === null ? "Not Available" : name}</h2>
       <h3>
-        <a
-          className="user-handle"
-          href={formatUrl(htmlUrl)}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
+        <Link className="user-handle" href={formatUrl(htmlUrl)}>
           @{handle}
-        </a>
+        </Link>
       </h3>
       <time className="joined-date" dateTime={joinDate}>
         Joined {formatDate(joinDate)}

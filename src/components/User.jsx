@@ -28,7 +28,7 @@ const User = ({ user }) => (
 
 User.propTypes = {
   user: PropTypes.shape({
-    avatar_url: PropTypes.string.isRequired,
+    avatar_url: PropTypes.string,
     name: PropTypes.string,
     login: PropTypes.string.isRequired,
     html_url: PropTypes.string.isRequired,

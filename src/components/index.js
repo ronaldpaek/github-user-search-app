@@ -6,6 +6,8 @@ import UserBio from "./UserBio";
 import UserStats from "./UserStats";
 import UserStat from "./UserStat";
 import UserContactDetails from "./UserContactDetails";
+import UserContactDetail from "./UserContactDetail";
+import Link from "./Link";
 
 export {
   AppHeader,
@@ -16,4 +18,6 @@ export {
   UserStats,
   UserStat,
   UserContactDetails,
+  UserContactDetail,
+  Link,
 };
